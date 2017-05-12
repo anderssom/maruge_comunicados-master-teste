@@ -12,7 +12,7 @@
         <activity android:name="br.com.maruge.maruge_comunicados.menu_adm" />
         <activity android:name="br.com.maruge.maruge_comunicados.nova_postagem" />
         <activity android:name="br.com.maruge.maruge_comunicados.postagens" />
-        <activity android:name="br.com.maruge.maruge_comunicados.novo_usuario">
+        <activity android:name=".novo_usuario">
 
         </activity>
     </application>

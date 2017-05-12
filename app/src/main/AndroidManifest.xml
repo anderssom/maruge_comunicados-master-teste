@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name="br.com.maruge.maruge_comunicados.menu_adm" />
         <activity android:name="br.com.maruge.maruge_comunicados.nova_postagem" />
-        <activity android:name="br.com.maruge.maruge_comunicados.postagens" />
+        <activity android:name=".postagens" />
         <activity android:name=".novo_usuario">
 
         </activity>

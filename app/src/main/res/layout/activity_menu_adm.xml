@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Titulo Menu Administrativo -->
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Menu Administrativo"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="25dp"
+        />
+    <!-- Botão NOVA POSTAGEM -->
+    <Button
+        android:id="@+id/btnNovaPostagem"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="Nova Postagem"
+        android:layout_marginTop="20dp"
+        android:background="#01942d"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        />
+    <!-- Botão de Postagens -->
+    <Button
+        android:id="@+id/btnPostagens"
+        android:layout_width="match_parent"
+        android:background="#f7aa03"
+        android:layout_height="200dp"
+        android:text="Postagens"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textSize="50dp"
+        />
+</LinearLayout>
+    </ScrollView>

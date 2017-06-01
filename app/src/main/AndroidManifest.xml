@@ -9,12 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.com.maruge.maruge_comunicados.menu_adm" />
-        <activity android:name="br.com.maruge.maruge_comunicados.nova_postagem" />
-        <activity android:name=".postagens" />
-        <activity android:name=".novo_usuario">
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".postagens" />
+        <activity android:name=".nova_postagem" />
+        <activity android:name=".novo_usuario" />
+        <activity android:name=".menu_adm" />
+        <activity android:name=".Menu_Usuario" />
+        <activity android:name=".PostagemUsuario" />
+        <activity android:name=".ListaUsuario"></activity>
     </application>
 
 </manifest>

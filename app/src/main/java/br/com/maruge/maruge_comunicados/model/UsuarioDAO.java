@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Jefferson David on 08/05/2017.
  */
 
-public class UsuarioDAO extends UsuarioGenericDAO<Usuario> {
+public class UsuarioDAO extends GenericDAO<Usuario> {
     private SQLiteDatabase database;
     public UsuarioDAO(Context context){
         super(context);
@@ -41,9 +41,26 @@ public class UsuarioDAO extends UsuarioGenericDAO<Usuario> {
         } while(cursor.moveToNext());
         return clientes;
     }
+
     @Override
+    public boolean atualizar(Usuario usuario) {
+        return false;
+    }
+
+   /* @Override
     public boolean deletar(int id) {
         database.execSQL("DELETE FROM usuario WHERE idusuario="+id);
         return false;
+    }*/
+
+    public boolean autenticar (String nome, String senha) {
+        Cursor cursor = database.rawQuery("SELECT * FROM usuario WHERE nome=? and senha=?", new String[]{nome, senha});
+        if (cursor != null) {
+            if (cursor.getCount() > 0) {
+                return true;
+            }
+        }
+        return false;
+
     }
 }

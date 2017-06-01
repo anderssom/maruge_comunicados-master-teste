@@ -10,29 +10,49 @@ import java.util.List;
  * Created by Jefferson David on 08/05/2017.
  */
 
-public abstract class UsuarioGenericDAO<T> extends SQLiteOpenHelper {
+public abstract class GenericDAO<T> extends SQLiteOpenHelper {
     private static final String NOME_BANCO = "maruge10";
     private static final int VERSAO_BANCO = 1;
     private String sqlCreateCliente = "CREATE TABLE IF NOT EXISTS usuario(" +
-            "idusuario INT AUTO_INCREMENT," +
+            "idusuario INTEGER ," +
             "nome VARCHAR(30) NOT NULL," +
             "senha VARCHAR(20) NOT NULL," +
-            "PRIMARY KEY(idusuario)"+
+            "PRIMARY KEY(idusuario)" +
             ");";
-    public UsuarioGenericDAO(Context context) {
+    private String sqlCreateMessagem = "CREATE TABLE IF NOT EXISTS messagens(" +
+            "idmessagem INTEGER ," +
+            "titulo VARCHAR(20) NOT NULL," +
+            "msg VARCHAR(200) NOT NULL," +
+            "PRIMARY KEY(idmessagem)" +
+            ");";
+
+    public GenericDAO(Context context) {
         super(context, NOME_BANCO, null, VERSAO_BANCO);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(sqlCreateCliente);
+        db.execSQL(sqlCreateMessagem);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if(oldVersion < 2)
-            db.execSQL("DELETE FROM usuario");
-        // db.execSQL("ALTER TABLE cliente ADD COLUMN cpf CHAR(11)");
+        //if (oldVersion < 2)
+        // db.execSQL("DELETE FROM messagens");
+        //db.execSQL("ALTER TABLE cliente ADD COLUMN cpf CHAR(11)");
+
+
     }
-    public abstract  boolean salvar(T t);
+
+
+
+
+
+    public abstract boolean salvar(T t);
     public abstract List<T> listar();
-    public abstract  boolean deletar(int id);
+    public abstract boolean atualizar(T t);
+    //public abstract boolean deletar(int id);
+
+
 }

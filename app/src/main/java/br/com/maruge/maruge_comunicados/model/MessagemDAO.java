@@ -12,56 +12,57 @@ import java.util.List;
 /**
  * Created by Jefferson David on 30/04/2017.
  */
-public class MessagemDAO extends MessagemGenericDAO<Messagem> {
+public class MessagemDAO extends GenericDAO<Messagem> {
 
     private SQLiteDatabase database;
-
     public MessagemDAO(Context context){
         super(context);
         database = getWritableDatabase();
     }
+    // SAlVAR OK
 
     @Override
     public boolean salvar( Messagem messagem) {
         database.execSQL("INSERT INTO messagens(titulo, msg) " +
-                "VALUES (?,?)",
-                new Object[]{messagem.getMsg(),messagem.getMsg()});
+                "VALUES ('"+messagem.getTitulo()+"'," +
+                "'"+messagem.getMsg()+"')");
         return false;
     }
 
-    @Override
-    public boolean deletar(int id) {
-        database.execSQL("DELETE FROM messagem WHERE idmessagem=?",
-                new Object[]{id});
-        return false;
-    }
+    // lista OK
 
     @Override
     public List<Messagem> listar() {
-        List<Messagem> messagems = new ArrayList<>();
+        List<Messagem> messagems = new ArrayList<Messagem>();
         Cursor cursor = database.rawQuery("SELECT * FROM messagens", null);
         cursor.moveToFirst();
         int indiceColunaId = cursor.getColumnIndex("idmessagem");
         int indiceColunaTitulo = cursor.getColumnIndex("titulo");
         int indiceColunaMsg = cursor.getColumnIndex("msg");
-        do{
+        do {
             Messagem messagem = new Messagem();
             messagem.setId(cursor.getInt(indiceColunaId));
             messagem.setTitulo(cursor.getString(indiceColunaTitulo));
             messagem.setMsg(cursor.getString(indiceColunaMsg));
-
             messagems.add(messagem);
-        } while(cursor.moveToNext());
+        } while (cursor.moveToNext());
         return messagems;
-
     }
 
+
+
+
+    /* @Override
+     public boolean deletar(int id) {
+         database.execSQL("DELETE FROM messagens WHERE idmessagem="+id);
+         return false;
+     }*/
     @Override
-    public boolean atualizar(Messagem messagem) {
-        database.execSQL("UPDATE messagem SET titulo=?, messagem=?" +
-        "WHERE idmessagem=?",
-                new Object[]{messagem.getTitulo(), messagem.getMsg(),
-                    messagem.getId()});
+    public boolean atualizar(Messagem messagem){
+        database.execSQL("UPDATE cliente SET nome=?, endereco=?" +
+                        " WHERE idcliente=?",
+                new Object[]{messagem.getId(), messagem.getTitulo(),
+                        messagem.getMsg()});
         return false;
     }
 }

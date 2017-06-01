@@ -2,11 +2,24 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@android:color/darker_gray">
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
+
+        <!-- Circulo que gira antes da pagina ser iniciada
+        <ProgressBar
+            android:id="@+id/progresso"
+            style="@android:style/Widget.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="200"
+            android:progress="75"/>
+            -->
         <!-- Logo da empresa -->
         <ImageView
             android:id="@+id/imageView"
@@ -20,40 +33,45 @@
             android:id="@+id/UsuarioLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome de Usuário"
-            android:ems="10"
             android:layout_marginTop="30dp"
-            />
-<!-- Campo da Senha do Usuario -->
+            android:ems="10"
+            android:hint="Ex:anderson"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:textAlignment="center" />
+        <!-- Campo da Senha do Usuario -->
         <EditText
             android:id="@+id/SenhaLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha"
-            android:ems="10"
-            android:inputType="textPassword"
             android:layout_marginTop="10dp"
-            />
-<!-- Botão Logar -->
+            android:ems="10"
+            android:hint="Ex:123456"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textAlignment="center" />
+        <!-- Botão Logar -->
         <Button
             android:id="@+id/btnLogar"
-            android:layout_width="match_parent"
+            android:layout_width="149dp"
             android:layout_height="wrap_content"
-            android:background="#08d130"
-            android:textStyle="bold"
-            android:textSize="20dp"
             android:layout_marginTop="30dp"
+            android:background="@android:color/black"
             android:text="Logar"
-            />
-<!-- Campo PARA CRIAR UM NOVO USUARIO -->
+            android:layout_gravity="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <!-- Campo PARA CRIAR UM NOVO USUARIO -->
         <TextView
+            android:id="@+id/txtNovoUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CRIAR UMA CONTA ! "
-            android:textSize="20dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:id="@+id/txtNovoUsuario"
-            />
+            android:text="Não tem uma conta? Crie uma! "
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
     </LinearLayout>
 </ScrollView>

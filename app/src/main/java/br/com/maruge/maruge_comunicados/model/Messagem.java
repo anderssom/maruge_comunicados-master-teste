@@ -35,7 +35,8 @@ public class Messagem {
 
     @Override
     public String toString() {
-        return this.getTitulo();
+        return "Titulo: " +titulo+ "\nMenssagem:\n "+ msg;
 
     }
 }
+

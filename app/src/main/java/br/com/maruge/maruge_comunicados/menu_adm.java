@@ -61,7 +61,7 @@ public class menu_adm extends AppCompatActivity  {
 
 
 
-        ListView listView = (ListView) findViewById(R.id.listView2);
+       /* ListView listView = (ListView) findViewById(R.id.listView2);
 
         MessagemDAO messagemDAO = new MessagemDAO(this);
         List<Messagem> messagems = new ArrayList<>();
@@ -73,6 +73,6 @@ public class menu_adm extends AppCompatActivity  {
         ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,messagems);
         listView.setAdapter(adapter);
 
-
+*/
     }
 }

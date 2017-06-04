@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity  {
 
                     Toast.makeText(MainActivity.this, "Bem vindo !!!"+usuario, Toast.LENGTH_LONG).show();
 
-                }else if ("admin".equals(usuario) && "admin".equals(senha)) {
+                }else if ("admin".equals(usuario) && "123456".equals(senha)) {
                     Intent it = new Intent(MainActivity.this, menu_adm.class);
                     startActivity(it);
                     limpaCampos();

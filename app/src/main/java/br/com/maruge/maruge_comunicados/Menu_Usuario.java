@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
 public class Menu_Usuario extends AppCompatActivity {
-    Button btnPostagens1;
+    TextView btnPostagens1;
 
    // private ListView listView;
 
@@ -32,7 +33,7 @@ public class Menu_Usuario extends AppCompatActivity {
         setContentView(R.layout.activity_menu__usuario);
 
 
-        btnPostagens1 = (Button)findViewById(R.id.btnPostagens1);
+        btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
         // Intente para ir para pagina de listagem das postagens
         btnPostagens1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -41,7 +42,7 @@ public class Menu_Usuario extends AppCompatActivity {
             }
         });
 
-       /* ListView listView = (ListView) findViewById(R.id.listView3);
+      /* ListView listView = (ListView) findViewById(R.id.listView4);
 
         MessagemDAO messagemDAO = new MessagemDAO(this);
         List<Messagem> messagems = new ArrayList<>();
@@ -53,6 +54,7 @@ public class Menu_Usuario extends AppCompatActivity {
         ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,messagems);
         listView.setAdapter(adapter);
         */
+
     }
 }
 

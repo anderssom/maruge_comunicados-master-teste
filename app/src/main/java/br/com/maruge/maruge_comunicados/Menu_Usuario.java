@@ -21,7 +21,7 @@ import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
 public class Menu_Usuario extends AppCompatActivity {
-    TextView btnPostagens1;
+    TextView btnPostagens1,btnNovaPostagem1,btnConfigurar;
 
    // private ListView listView;
 
@@ -32,12 +32,31 @@ public class Menu_Usuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu__usuario);
 
-
+        //BUTÕES
+        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
+        btnConfigurar = (TextView) findViewById(R.id.btnConfigurar);
+
+        //intente para ir para a pagina de listagem de usuarios
+        btnConfigurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(Menu_Usuario.this,ListaUsuario.class);
+                startActivity(it);
+            }
+        });
+
         // Intente para ir para pagina de listagem das postagens
         btnPostagens1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent it = new Intent(Menu_Usuario.this, PostagemUsuario.class);
+                startActivity(it);
+            }
+        });
+        //Intente para criar uma nova postagem
+        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(Menu_Usuario.this, nova_postagem.class);
                 startActivity(it);
             }
         });

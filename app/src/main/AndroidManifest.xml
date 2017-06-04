@@ -23,7 +23,8 @@
         <activity android:name=".menu_adm" />
         <activity android:name=".Menu_Usuario" />
         <activity android:name=".PostagemUsuario" />
-        <activity android:name=".ListaUsuario"></activity>
+        <activity android:name=".ListaUsuario" />
+        <activity android:name=".Configurar"></activity>
     </application>
 
 </manifest>

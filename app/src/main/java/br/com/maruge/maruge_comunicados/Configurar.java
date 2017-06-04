@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,26 +14,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.maruge.maruge_comunicados.R;
-import br.com.maruge.maruge_comunicados.model.Messagem;
-import br.com.maruge.maruge_comunicados.model.MessagemDAO;
 import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
-public class ListaUsuario extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class Configurar extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    private ListView listView4;
+    private ListView listView5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_usuario);
+        setContentView(R.layout.activity_configurar);
 
-
-        listView4 = (ListView) findViewById(R.id.listView4);
+        listView5 = (ListView) findViewById(R.id.listView5);
 
         atualizaListaClientes();
 
-        listView4.setOnItemClickListener(this);
+        listView5.setOnItemClickListener(this);
     }
 
     @Override
@@ -60,7 +56,7 @@ public class ListaUsuario extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(DialogInterface dialog, int which) {
                 dao.deletar(usuario.getId());
                 atualizaListaClientes();
-                Toast.makeText(ListaUsuario.this,
+                Toast.makeText(Configurar.this,
                         "Nome "+usuario.getNome()+", excluído!",
                         Toast.LENGTH_SHORT).show();
             }
@@ -83,7 +79,7 @@ public class ListaUsuario extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<Usuario> adapter =
                 new ArrayAdapter<Usuario>(this, android.R.layout.simple_list_item_1,
                         usuarios);
-        listView4.setAdapter(adapter);
+        listView5.setAdapter(adapter);
     }
 
 

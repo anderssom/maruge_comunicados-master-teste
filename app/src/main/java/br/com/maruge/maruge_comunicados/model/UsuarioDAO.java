@@ -17,41 +17,53 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
         super(context);
         database = getWritableDatabase();
     }
+    // SAlVAR OK
+
     @Override
-    public boolean salvar( Usuario cliente) {
+    public boolean salvar( Usuario usuario) {
         database.execSQL("INSERT INTO usuario(nome, senha) " +
-                "VALUES ('"+cliente.getNome()+"'," +
-                "'"+cliente.getSenha()+"')");
+                "VALUES ('"+usuario.getNome()+"'," +
+                "'"+usuario.getSenha()+"')");
         return false;
     }
+
+    // lista OK
+
     @Override
     public List<Usuario> listar() {
-        List<Usuario> clientes = new ArrayList<>();
+        List<Usuario> usuarios = new ArrayList<Usuario>();
         Cursor cursor = database.rawQuery("SELECT * FROM usuario", null);
         cursor.moveToFirst();
         int indiceColunaId = cursor.getColumnIndex("idusuario");
         int indiceColunaNome = cursor.getColumnIndex("nome");
         int indiceColunaSenha = cursor.getColumnIndex("senha");
-        do{
-            Usuario cliente = new Usuario();
-            cliente.setId(cursor.getInt(indiceColunaId));
-            cliente.setNome(cursor.getString(indiceColunaNome));
-            cliente.setSenha(cursor.getString(indiceColunaSenha));
-            clientes.add(cliente);
-        } while(cursor.moveToNext());
-        return clientes;
+        do {
+            Usuario usuario = new Usuario();
+            usuario.setId(cursor.getInt(indiceColunaId));
+            usuario.setNome(cursor.getString(indiceColunaNome));
+            usuario.setSenha(cursor.getString(indiceColunaSenha));
+            usuarios.add(usuario);
+        } while (cursor.moveToNext());
+        return usuarios;
     }
 
-    @Override
-    public boolean atualizar(Usuario usuario) {
-        return false;
-    }
 
     @Override
     public boolean deletar(int id) {
-        database.execSQL("DELETE FROM usuario WHERE idusuario="+id);
+        database.execSQL("DELETE FROM usuario WHERE idusuario=?",
+                new Object[]{id});
         return false;
     }
+
+    @Override
+    public boolean atualizar(Usuario usuario){
+        database.execSQL("UPDATE usuario SET nome=?, senha=?" +
+                        " WHERE idusuario=?",
+                new Object[]{usuario.getId(), usuario.getNome(),
+                        usuario.getSenha()});
+        return false;
+    }
+
 
     public boolean autenticar (String nome, String senha) {
         Cursor cursor = database.rawQuery("SELECT * FROM usuario WHERE nome=? and senha=?", new String[]{nome, senha});

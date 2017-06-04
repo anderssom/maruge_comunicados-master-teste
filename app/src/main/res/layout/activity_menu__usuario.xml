@@ -9,17 +9,6 @@
         android:layout_height="match_parent"
         android:weightSum="1">
 
-        <!-- Titulo Menu Administrativo -->
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Menu Administrativo"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="25dp"
-            android:textStyle="bold|italic" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -29,7 +18,7 @@
 
             <!-- Botão NOVA POSTAGEM -->
             <TextView
-                android:id="@+id/btnNovaPostagem"
+                android:id="@+id/btnNovaPostagem1"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -51,23 +40,16 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/btUsuarios"
+                android:id="@+id/btnConfigurar"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Usuarios"
+                android:text="Configurar"
                 android:textAlignment="center"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <ListView
-            android:id="@+id/listView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </ListView>
-
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"

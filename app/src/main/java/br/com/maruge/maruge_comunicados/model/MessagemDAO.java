@@ -50,17 +50,17 @@ public class MessagemDAO extends GenericDAO<Messagem> {
     }
 
 
+    @Override
+    public boolean deletar(int id) {
+        database.execSQL("DELETE FROM messagens WHERE idmessagem=?",
+                new Object[]{id});
+        return false;
+    }
 
-
-    /* @Override
-     public boolean deletar(int id) {
-         database.execSQL("DELETE FROM messagens WHERE idmessagem="+id);
-         return false;
-     }*/
     @Override
     public boolean atualizar(Messagem messagem){
-        database.execSQL("UPDATE cliente SET nome=?, endereco=?" +
-                        " WHERE idcliente=?",
+        database.execSQL("UPDATE messagens SET titulo=?, msg=?" +
+                        " WHERE idmessagem=?",
                 new Object[]{messagem.getId(), messagem.getTitulo(),
                         messagem.getMsg()});
         return false;

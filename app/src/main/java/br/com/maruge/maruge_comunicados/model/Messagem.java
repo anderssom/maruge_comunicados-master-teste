@@ -35,7 +35,7 @@ public class Messagem {
 
     @Override
     public String toString() {
-        return "Titulo: " +titulo+ "\nMenssagem:\n "+ msg;
+        return "Titulo: " + titulo + "\nMenssagem:\n "+ msg;
 
     }
 }

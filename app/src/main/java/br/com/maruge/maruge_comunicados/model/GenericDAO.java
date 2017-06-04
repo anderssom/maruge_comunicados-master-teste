@@ -36,23 +36,17 @@ public abstract class GenericDAO<T> extends SQLiteOpenHelper {
         db.execSQL(sqlCreateMessagem);
     }
 
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //if (oldVersion < 2)
-        // db.execSQL("DELETE FROM messagens");
-        //db.execSQL("ALTER TABLE cliente ADD COLUMN cpf CHAR(11)");
-
-
+       // if (oldVersion < 2)
+       // db.execSQL("ALTER TABLE cliente ADD COLUMN cpf CHAR(11)");
     }
-
-
-
-
 
     public abstract boolean salvar(T t);
     public abstract List<T> listar();
     public abstract boolean atualizar(T t);
-    //public abstract boolean deletar(int id);
+    public abstract boolean deletar(int id);
 
 
 }

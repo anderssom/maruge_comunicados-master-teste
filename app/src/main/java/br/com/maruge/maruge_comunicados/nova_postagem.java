@@ -51,9 +51,9 @@ public class nova_postagem extends AppCompatActivity {
                 startActivity(intent);
 
                 messagem = new Messagem();
-
-                messagem.setTitulo(titulo.getText().toString());
                 Messagem messagem = new Messagem();
+                messagem.setTitulo(titulo.getText().toString());
+
                 messagem.setMsg(msg.getText().toString());
 
                 MessagemDAO db = new MessagemDAO(nova_postagem.this);

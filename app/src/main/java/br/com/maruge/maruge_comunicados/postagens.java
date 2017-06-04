@@ -39,7 +39,7 @@ public class postagens extends AppCompatActivity implements AdapterView.OnItemCl
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, final long id) {
 
         final Messagem messagem = (Messagem) parent.getAdapter().getItem(position);
         final MessagemDAO dao = new MessagemDAO(this);
@@ -53,16 +53,16 @@ public class postagens extends AppCompatActivity implements AdapterView.OnItemCl
                 nova_postagem.chamaTela(postagens.this, messagem);
             }
         });
-        /*builder.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dao.(messagem.getId());
+                dao.deletar(messagem.getId());
                 atualizaListaClientes();
                 Toast.makeText(postagens.this,
                         "Titulo "+messagem.getTitulo()+", excluído!",
                         Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 

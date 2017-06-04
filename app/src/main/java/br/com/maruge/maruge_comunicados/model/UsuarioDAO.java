@@ -47,11 +47,11 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
         return false;
     }
 
-   /* @Override
+    @Override
     public boolean deletar(int id) {
         database.execSQL("DELETE FROM usuario WHERE idusuario="+id);
         return false;
-    }*/
+    }
 
     public boolean autenticar (String nome, String senha) {
         Cursor cursor = database.rawQuery("SELECT * FROM usuario WHERE nome=? and senha=?", new String[]{nome, senha});

@@ -56,7 +56,7 @@ public class Menu_Usuario extends AppCompatActivity {
         //Intente para criar uma nova postagem
         btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(Menu_Usuario.this, nova_postagem.class);
+                Intent it = new Intent(Menu_Usuario.this, NovoComunicadoUsuario.class);
                 startActivity(it);
             }
         });

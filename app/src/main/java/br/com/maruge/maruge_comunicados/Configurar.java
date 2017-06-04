@@ -1,6 +1,7 @@
 package br.com.maruge.maruge_comunicados;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,11 +22,41 @@ import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 public class Configurar extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView5;
+    TextView btnNovaPostagem1,btnPostagens1,btnConfigurar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configurar);
+
+        //BUTÕES
+        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
+        btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
+        btnConfigurar = (TextView) findViewById(R.id.btnConfigurar);
+
+        //intente para ir para a pagina de listagem de usuarios
+        btnConfigurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(Configurar.this,ListaUsuario.class);
+                startActivity(it);
+            }
+        });
+
+        // Intente para ir para pagina de listagem das postagens
+        btnPostagens1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(Configurar.this, PostagemUsuario.class);
+                startActivity(it);
+            }
+        });
+        //Intente para criar uma nova postagem
+        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(Configurar.this, NovoComunicadoUsuario.class);
+                startActivity(it);
+            }
+        });
 
         listView5 = (ListView) findViewById(R.id.listView5);
 

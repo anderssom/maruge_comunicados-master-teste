@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +22,8 @@ import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
 public class Menu_Usuario extends AppCompatActivity {
-    TextView btnPostagens1,btnNovaPostagem1,btnConfigurar;
+    TextView btnPostagens1,btnNovaPostagem1;
+    ImageButton ibInicio,ibConfigurar;
 
    // private ListView listView;
 
@@ -33,15 +35,25 @@ public class Menu_Usuario extends AppCompatActivity {
         setContentView(R.layout.activity_menu__usuario);
 
         //BUTÕES
+        ibInicio = (ImageButton)findViewById(R.id.ibInicio);
         btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
-        btnConfigurar = (TextView) findViewById(R.id.btnConfigurar);
+        ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
 
-        //intente para ir para a pagina de listagem de usuarios
-        btnConfigurar.setOnClickListener(new View.OnClickListener() {
+
+        //intente para voltar ao inicio.
+        ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Menu_Usuario.this,ListaUsuario.class);
+                Intent it = new Intent(Menu_Usuario.this,Menu_Usuario.class);
+            }
+        });
+
+        //intente para ir para a pagina de listagem de usuarios
+        ibConfigurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(Menu_Usuario.this,Configurar.class);
                 startActivity(it);
             }
         });

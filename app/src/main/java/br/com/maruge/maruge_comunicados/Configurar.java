@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,8 @@ import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 public class Configurar extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView5;
-    TextView btnNovaPostagem1,btnPostagens1,btnConfigurar;
+    TextView btnNovaPostagem1,btnPostagens1;
+    ImageButton ibConfigurar, ibInicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +32,24 @@ public class Configurar extends AppCompatActivity implements AdapterView.OnItemC
         setContentView(R.layout.activity_configurar);
 
         //BUTÕES
+        ibInicio = (ImageButton)findViewById(R.id.ibInicio);
         btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
-        btnConfigurar = (TextView) findViewById(R.id.btnConfigurar);
+        ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
 
-        //intente para ir para a pagina de listagem de usuarios
-        btnConfigurar.setOnClickListener(new View.OnClickListener() {
+        //intente para voltar ao inicio.
+        ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Configurar.this,ListaUsuario.class);
+                Intent it = new Intent(Configurar.this,Menu_Usuario.class);
+            }
+        });
+
+        //intente para ir para a pagina de listagem de usuarios
+        ibConfigurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(Configurar.this,Configurar.class);
                 startActivity(it);
             }
         });

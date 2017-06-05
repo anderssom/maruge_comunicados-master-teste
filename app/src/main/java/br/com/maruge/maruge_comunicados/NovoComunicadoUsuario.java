@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +17,8 @@ import br.com.maruge.maruge_comunicados.model.MessagemDAO;
 
 public class NovoComunicadoUsuario extends AppCompatActivity {
 
-    TextView  btnNovaPostagem1,btnPostagens1,btnConfigurar;
+    TextView  btnNovaPostagem1,btnPostagens1;
+    ImageButton ibInicio, ibConfigurar;
 
     private static final String TAG = "aula_sq";
 
@@ -30,12 +32,22 @@ public class NovoComunicadoUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_comunicado_usuario);
         //BUTÕES
+        ibInicio = (ImageButton)findViewById(R.id.ibInicio);
         btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
-        btnConfigurar = (TextView) findViewById(R.id.btnConfigurar);
+        ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
+
+        //intente para voltar ao inicio.
+        ibInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(NovoComunicadoUsuario.this,Menu_Usuario.class);
+                startActivity(it);
+            }
+        });
 
         //intente para ir para a pagina de listagem de usuarios
-        btnConfigurar.setOnClickListener(new View.OnClickListener() {
+        ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(NovoComunicadoUsuario.this,Configurar.class);

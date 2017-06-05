@@ -17,6 +17,12 @@
             android:background="@android:color/black"
             android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/ibInicio"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/a" />
+
             <!-- Botão NOVA POSTAGEM -->
             <TextView
                 android:id="@+id/btnNovaPostagem1"
@@ -40,32 +46,19 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/btnConfigurar"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Configurar"
-                android:textAlignment="center"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/ibConfigurar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:drawable/ic_menu_preferences"
+                android:backgroundTint="@android:color/darker_gray" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Novo Comunicado:"
-                android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
 
             <EditText
                 android:id="@+id/EdtTitulo"

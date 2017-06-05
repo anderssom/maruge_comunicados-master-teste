@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,7 +21,8 @@ import br.com.maruge.maruge_comunicados.model.MessagemDAO;
 public class PostagemUsuario extends AppCompatActivity {
 
     private ListView listView;
-    TextView  btnNovaPostagem1,btnPostagens1,btnConfigurar;
+    TextView  btnNovaPostagem1,btnPostagens1;
+    ImageButton ibInicio, ibConfigurar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +32,19 @@ public class PostagemUsuario extends AppCompatActivity {
         //BUTÕES
         btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
-        btnConfigurar = (TextView) findViewById(R.id.btnConfigurar);
+        ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
+        ibInicio = (ImageButton)findViewById(R.id.ibInicio);
+
+        //intente para voltar ao inicio.
+        ibInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(PostagemUsuario.this,Menu_Usuario.class);
+            }
+        });
 
         //intente para ir para a pagina de listagem de usuarios
-        btnConfigurar.setOnClickListener(new View.OnClickListener() {
+        ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(PostagemUsuario.this,Configurar.class);

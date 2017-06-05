@@ -1,13 +1,10 @@
 package br.com.maruge.maruge_comunicados;
 
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -30,7 +27,7 @@ public class nova_postagem extends AppCompatActivity {
     //Chamar tela ok
     public static void chamaTela(Context context, Messagem messagem){
         nova_postagem.messagem = messagem;
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, Login.class);
         context.startActivity(intent);
     }
     @Override

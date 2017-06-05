@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Login" />
         <activity android:name=".postagens" />
         <activity android:name=".nova_postagem" />
         <activity android:name=".novo_usuario" />

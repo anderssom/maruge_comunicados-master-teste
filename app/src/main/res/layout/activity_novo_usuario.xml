@@ -10,25 +10,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="351dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text=" Novo Usuário:"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:background="@android:color/black"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibInicio"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/a" />
+
+            <!-- Botão NOVA POSTAGEM -->
+            <!-- Botão de Postagens -->
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Faça seu Cadastro"
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibConfigurar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:drawable/ic_menu_preferences"
+                android:backgroundTint="@android:color/darker_gray" />
+        </LinearLayout>
+
 
         <EditText
             android:id="@+id/edtNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:hint="Ex:anderson"
             android:inputType="textPassword"
             android:maxLines="1" />

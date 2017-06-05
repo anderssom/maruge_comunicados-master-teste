@@ -5,8 +5,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import br.com.maruge.maruge_comunicados.R;
-
 public class Splash extends AppCompatActivity implements Runnable {
 
     @Override
@@ -22,7 +20,7 @@ public class Splash extends AppCompatActivity implements Runnable {
 
     @Override
     public void run() {
-        startActivity(new Intent(this,MainActivity.class));
+        startActivity(new Intent(this,Login.class));
         finish();
     }
 }

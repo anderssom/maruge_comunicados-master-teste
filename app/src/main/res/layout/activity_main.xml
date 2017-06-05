@@ -23,8 +23,8 @@
         <!-- Logo da empresa -->
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_width="268dp"
+            android:layout_height="115dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:src="@mipmap/logo" />
@@ -38,7 +38,7 @@
             android:hint="Ex:anderson"
             android:inputType="textPersonName"
             android:maxLines="1"
-            android:textAlignment="center" />
+            android:gravity="center" />
         <!-- Campo da Senha do Usuario -->
         <EditText
             android:id="@+id/SenhaLogin"
@@ -49,7 +49,7 @@
             android:hint="Ex:123456"
             android:inputType="numberPassword"
             android:maxLines="1"
-            android:textAlignment="center" />
+            android:gravity="center" />
         <!-- Botão Logar -->
         <Button
             android:id="@+id/btnLogar"

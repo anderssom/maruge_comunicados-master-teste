@@ -8,13 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
-public class MainActivity extends AppCompatActivity  {
+public class Login extends AppCompatActivity  {
     Button btnLogar;
     TextView txtNovoUsuario;
     TextView nomeUsuario,senhaUsuario;
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity  {
             public void onClick(View v) {
                 String usuario = nomeUsuario.getText().toString();
                 String senha = senhaUsuario.getText().toString();
-                UsuarioDAO dao= new UsuarioDAO(MainActivity.this);
+                UsuarioDAO dao= new UsuarioDAO(Login.this);
 
 
                 if (usuario.isEmpty()) {
@@ -64,17 +63,17 @@ public class MainActivity extends AppCompatActivity  {
 
                 } else if (dao.autenticar(usuario,senha)) {
 
-                    Intent it = new Intent(MainActivity.this, Menu_Usuario.class);
+                    Intent it = new Intent(Login.this, Menu_Usuario.class);
                     startActivity(it);
 
-                    Toast.makeText(MainActivity.this, "Bem vindo !!!"+usuario, Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Bem vindo !!!"+usuario, Toast.LENGTH_LONG).show();
 
                 }else if ("admin".equals(usuario) && "123456".equals(senha)) {
-                    Intent it = new Intent(MainActivity.this, menu_adm.class);
+                    Intent it = new Intent(Login.this, menu_adm.class);
                     startActivity(it);
                     limpaCampos();
 
-                    Toast.makeText(MainActivity.this, "Bem vindo Administrador !!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Bem vindo Administrador !!!", Toast.LENGTH_LONG).show();
                 }else {
                     alert("Usuário ou Senha Incorretos");
                     limpaCampos();
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity  {
         // Intente Para Novo Usuário
         txtNovoUsuario.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, novo_usuario.class);
+                Intent it = new Intent(Login.this, novo_usuario.class);
                 startActivity(it);
             }
 

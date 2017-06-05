@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -19,6 +20,8 @@ import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
 public class novo_usuario extends AppCompatActivity {
 
+    ImageButton ibInicio;
+
     private static final String TAG = "aula_sqlite";
 
     InputMethodManager imm;
@@ -27,6 +30,17 @@ public class novo_usuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_usuario);
+
+        //Botão
+        ibInicio = (ImageButton) findViewById(R.id.ibInicio);
+
+        //intente para voltar ao inicio.
+        ibInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(novo_usuario.this,Login.class);
+            }
+        });
 
         final EditText tvNome = (EditText) findViewById(R.id.edtNome);
         final EditText tvSenha = (EditText) findViewById(R.id.edtSenha);
@@ -45,7 +59,7 @@ public class novo_usuario extends AppCompatActivity {
                 usuario.setNome(tvNome.getText().toString());
                 usuario.setSenha(tvSenha.getText().toString());
 
-                Intent ven = new Intent(getBaseContext(), MainActivity.class);
+                Intent ven = new Intent(getBaseContext(), Login.class);
                 startActivity(ven);
 
                 usuarioDAO.salvar(usuario);

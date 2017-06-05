@@ -20,7 +20,6 @@ public class menu_adm extends AppCompatActivity  {
 
     TextView btnPostagens1,btnNovaPostagem1;
     ImageButton ibInicio,ibConfigurar;
-    private ListView listView;
 
 
     @Override
@@ -70,19 +69,5 @@ public class menu_adm extends AppCompatActivity  {
         });
 
 
-
-       /* ListView listView = (ListView) findViewById(R.id.listView2);
-
-        MessagemDAO messagemDAO = new MessagemDAO(this);
-        List<Messagem> messagems = new ArrayList<>();
-        if (messagemDAO.listar()!=null){
-            if (messagemDAO.listar().size()>0){
-                messagems = messagemDAO.listar();
-            }
-        }
-        ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,messagems);
-        listView.setAdapter(adapter);
-
-*/
     }
 }

@@ -2,6 +2,7 @@ package br.com.maruge.maruge_comunicados;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -9,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.maruge.maruge_comunicados.model.Messagem;
@@ -24,12 +27,54 @@ import java.util.List;
 
 public class postagens extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
+    TextView btnPostagens1,btnNovaPostagem1;
+    ImageButton ibInicio,ibConfigurar;
+
     private ListView listView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postagens);
+
+        //BUTÕES
+        ibInicio = (ImageButton)findViewById(R.id.ibInicio);
+        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
+        btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
+        ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
+
+
+        //intente para voltar ao inicio.
+        ibInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(postagens.this,Menu_Usuario.class);
+            }
+        });
+
+        //intente para ir para a pagina de listagem de usuarios
+        ibConfigurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(postagens.this,Configurar.class);
+                startActivity(it);
+            }
+        });
+
+        // Intente para ir para pagina de listagem das postagens
+        btnPostagens1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(postagens.this, PostagemUsuario.class);
+                startActivity(it);
+            }
+        });
+        //Intente para criar uma nova postagem
+        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(postagens.this, NovoComunicadoUsuario.class);
+                startActivity(it);
+            }
+        });
 
         listView = (ListView) findViewById(R.id.listView);
 

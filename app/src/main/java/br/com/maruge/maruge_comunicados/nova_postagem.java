@@ -10,6 +10,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.maruge.maruge_comunicados.model.Messagem;
@@ -17,6 +19,8 @@ import br.com.maruge.maruge_comunicados.model.MessagemDAO;
 
 public class nova_postagem extends AppCompatActivity {
 
+    TextView btnPostagens1,btnNovaPostagem1;
+    ImageButton ibInicio,ibConfigurar;
 
     private static final String TAG = "aula_sq";
 
@@ -33,6 +37,45 @@ public class nova_postagem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova_postagem);
+
+        //BUTÕES
+        ibInicio = (ImageButton)findViewById(R.id.ibInicio);
+        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
+        btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
+        ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
+
+
+        //intente para voltar ao inicio.
+        ibInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(nova_postagem.this,Menu_Usuario.class);
+            }
+        });
+
+        //intente para ir para a pagina de listagem de usuarios
+        ibConfigurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(nova_postagem.this,Configurar.class);
+                startActivity(it);
+            }
+        });
+
+        // Intente para ir para pagina de listagem das postagens
+        btnPostagens1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(nova_postagem.this, PostagemUsuario.class);
+                startActivity(it);
+            }
+        });
+        //Intente para criar uma nova postagem
+        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(nova_postagem.this, NovoComunicadoUsuario.class);
+                startActivity(it);
+            }
+        });
 
         final EditText titulo = (EditText) findViewById(R.id.EdtTitulo);
         final EditText msg = (EditText)findViewById(R.id.editMessagem);

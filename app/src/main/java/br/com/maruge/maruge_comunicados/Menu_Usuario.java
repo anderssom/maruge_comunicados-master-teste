@@ -5,21 +5,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import br.com.maruge.maruge_comunicados.model.Messagem;
-import br.com.maruge.maruge_comunicados.model.MessagemDAO;
-import br.com.maruge.maruge_comunicados.model.Usuario;
-import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
+
 
 public class Menu_Usuario extends AppCompatActivity {
     TextView btnPostagens1,btnNovaPostagem1;

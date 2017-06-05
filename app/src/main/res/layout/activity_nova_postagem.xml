@@ -2,71 +2,98 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
-
+    >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:weightSum="1">
 
 
-        <TextView
-            android:layout_width="match_parent"
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Novo Comunicado:"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-
-        <EditText
-            android:id="@+id/EdtTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:inputType="text"
-            android:maxLines="1"
-            android:hint="Ex:Titulo"
-
-            />
-
-        <EditText
-            android:id="@+id/editMessagem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:hint="Ex:Messagem"
-            android:inputType="textMultiLine" />
-
-        <Button
-            android:id="@+id/btnSalvarMessagem"
-            android:layout_width="153dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:background="@android:color/black"
-            android:text="Salvar"
-            android:layout_gravity="center"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-<!--
-        <Button
-            android:id="@+id/btnListar"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibInicio"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/a" />
+
+            <!-- Botão NOVA POSTAGEM -->
+            <TextView
+                android:id="@+id/btnNovaPostagem1"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Comunicado"
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <!-- Botão de Postagens -->
+            <TextView
+                android:id="@+id/btnPostagens1"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Postagens"
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ibConfigurar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:drawable/ic_menu_preferences"
+                android:backgroundTint="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@android:color/black"
-            android:text="Vizualizar Postagens"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-            -->
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/EdtTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:inputType="text"
+                android:maxLines="1"
+                android:hint="Ex:Titulo"
+
+                />
+
+            <EditText
+                android:id="@+id/editMessagem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:hint="Ex:Messagem"
+                android:inputType="textMultiLine" />
+
+            <Button
+                android:id="@+id/btnSalvarMessagem"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/black"
+                android:text="Salvar"
+                android:layout_gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

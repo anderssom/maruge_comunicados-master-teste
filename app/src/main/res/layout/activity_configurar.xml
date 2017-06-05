@@ -16,6 +16,7 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/a" />
@@ -53,7 +54,7 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="464dp"
+            android:layout_height="388dp"
             android:id="@+id/listView5">
         </ListView>
     </LinearLayout>

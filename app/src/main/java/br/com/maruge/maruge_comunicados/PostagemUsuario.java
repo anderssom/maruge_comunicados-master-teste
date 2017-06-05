@@ -40,6 +40,7 @@ public class PostagemUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(PostagemUsuario.this,Menu_Usuario.class);
+                startActivity(it);
             }
         });
 

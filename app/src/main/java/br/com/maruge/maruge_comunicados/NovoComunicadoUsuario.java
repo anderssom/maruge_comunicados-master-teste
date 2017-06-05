@@ -50,7 +50,7 @@ public class NovoComunicadoUsuario extends AppCompatActivity {
         ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(NovoComunicadoUsuario.this,Configurar.class);
+                Intent it = new Intent(NovoComunicadoUsuario.this,ListaUsuario.class);
                 startActivity(it);
             }
         });

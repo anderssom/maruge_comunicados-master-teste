@@ -33,17 +33,20 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
     public List<Usuario> listar() {
         List<Usuario> usuarios = new ArrayList<Usuario>();
         Cursor cursor = database.rawQuery("SELECT * FROM usuario", null);
-        cursor.moveToFirst();
+
         int indiceColunaId = cursor.getColumnIndex("idusuario");
         int indiceColunaNome = cursor.getColumnIndex("nome");
         int indiceColunaSenha = cursor.getColumnIndex("senha");
-        do {
-            Usuario usuario = new Usuario();
-            usuario.setId(cursor.getInt(indiceColunaId));
-            usuario.setNome(cursor.getString(indiceColunaNome));
-            usuario.setSenha(cursor.getString(indiceColunaSenha));
-            usuarios.add(usuario);
-        } while (cursor.moveToNext());
+        if (cursor.moveToFirst()) {
+            do {
+                Usuario usuario = new Usuario();
+                usuario.setId(cursor.getInt(indiceColunaId));
+                usuario.setNome(cursor.getString(indiceColunaNome));
+                usuario.setSenha(cursor.getString(indiceColunaSenha));
+                usuarios.add(usuario);
+            } while (cursor.moveToNext());
+
+        }
         return usuarios;
     }
 

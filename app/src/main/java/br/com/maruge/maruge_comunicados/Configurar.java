@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.maruge.maruge_comunicados.R;
+
 import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
@@ -41,15 +41,17 @@ public class Configurar extends AppCompatActivity implements AdapterView.OnItemC
         ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Configurar.this,Menu_Usuario.class);
+                Intent it = new Intent(Configurar.this, Menu_Usuario.class);
+                startActivity(it);
             }
         });
+
 
         //intente para ir para a pagina de listagem de usuarios
         ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Configurar.this,Configurar.class);
+                Intent it = new Intent(Configurar.this, Configurar.class);
                 startActivity(it);
             }
         });
@@ -68,6 +70,7 @@ public class Configurar extends AppCompatActivity implements AdapterView.OnItemC
                 startActivity(it);
             }
         });
+
 
         listView5 = (ListView) findViewById(R.id.listView5);
 

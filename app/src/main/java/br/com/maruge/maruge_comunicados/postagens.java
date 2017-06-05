@@ -48,7 +48,7 @@ public class postagens extends AppCompatActivity implements AdapterView.OnItemCl
         ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(postagens.this,Menu_Usuario.class);
+                Intent it = new Intent(postagens.this,menu_adm.class);
             }
         });
 
@@ -56,7 +56,7 @@ public class postagens extends AppCompatActivity implements AdapterView.OnItemCl
         ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(postagens.this,Configurar.class);
+                Intent it = new Intent(postagens.this,ListaUsuario.class);
                 startActivity(it);
             }
         });
@@ -64,14 +64,14 @@ public class postagens extends AppCompatActivity implements AdapterView.OnItemCl
         // Intente para ir para pagina de listagem das postagens
         btnPostagens1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(postagens.this, PostagemUsuario.class);
+                Intent it = new Intent(postagens.this, postagens.class);
                 startActivity(it);
             }
         });
         //Intente para criar uma nova postagem
         btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(postagens.this, NovoComunicadoUsuario.class);
+                Intent it = new Intent(postagens.this, nova_postagem.class);
                 startActivity(it);
             }
         });

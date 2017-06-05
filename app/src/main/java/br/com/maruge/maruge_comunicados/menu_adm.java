@@ -41,7 +41,7 @@ public class menu_adm extends AppCompatActivity  {
         ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(menu_adm.this,Menu_Usuario.class);
+                Intent it = new Intent(menu_adm.this,menu_adm.class);
             }
         });
 
@@ -49,7 +49,7 @@ public class menu_adm extends AppCompatActivity  {
         ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(menu_adm.this,Configurar.class);
+                Intent it = new Intent(menu_adm.this,ListaUsuario.class);
                 startActivity(it);
             }
         });
@@ -57,14 +57,14 @@ public class menu_adm extends AppCompatActivity  {
         // Intente para ir para pagina de listagem das postagens
         btnPostagens1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(menu_adm.this, PostagemUsuario.class);
+                Intent it = new Intent(menu_adm.this, postagens.class);
                 startActivity(it);
             }
         });
         //Intente para criar uma nova postagem
         btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(menu_adm.this, NovoComunicadoUsuario.class);
+                Intent it = new Intent(menu_adm.this, nova_postagem.class);
                 startActivity(it);
             }
         });

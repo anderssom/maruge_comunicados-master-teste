@@ -49,7 +49,7 @@ public class nova_postagem extends AppCompatActivity {
         ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(nova_postagem.this,Menu_Usuario.class);
+                Intent it = new Intent(nova_postagem.this, menu_adm.class);
             }
         });
 
@@ -57,7 +57,7 @@ public class nova_postagem extends AppCompatActivity {
         ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(nova_postagem.this,Configurar.class);
+                Intent it = new Intent(nova_postagem.this,ListaUsuario.class);
                 startActivity(it);
             }
         });
@@ -65,14 +65,14 @@ public class nova_postagem extends AppCompatActivity {
         // Intente para ir para pagina de listagem das postagens
         btnPostagens1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(nova_postagem.this, PostagemUsuario.class);
+                Intent it = new Intent(nova_postagem.this, postagens.class);
                 startActivity(it);
             }
         });
         //Intente para criar uma nova postagem
         btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(nova_postagem.this, NovoComunicadoUsuario.class);
+                Intent it = new Intent(nova_postagem.this, nova_postagem.class);
                 startActivity(it);
             }
         });

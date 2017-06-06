@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 
 public class Menu_Usuario extends AppCompatActivity {
-    TextView btnPostagens1,btnNovaPostagem1;
+    TextView btnPostagens1,btnSair;
     ImageButton ibInicio,ibConfigurar;
 
    // private ListView listView;
@@ -26,7 +26,7 @@ public class Menu_Usuario extends AppCompatActivity {
 
         //BUTÕES
         ibInicio = (ImageButton)findViewById(R.id.ibInicio);
-        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
+        btnSair = (TextView) findViewById(R.id.btnSair);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
         ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
 
@@ -56,9 +56,9 @@ public class Menu_Usuario extends AppCompatActivity {
             }
         });
         //Intente para criar uma nova postagem
-        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
+        btnSair.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(Menu_Usuario.this, NovoComunicadoUsuario.class);
+                Intent it = new Intent(Menu_Usuario.this, Login.class);
                 startActivity(it);
             }
         });

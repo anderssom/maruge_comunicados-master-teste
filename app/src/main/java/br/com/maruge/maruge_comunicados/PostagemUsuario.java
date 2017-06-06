@@ -21,7 +21,7 @@ import br.com.maruge.maruge_comunicados.model.MessagemDAO;
 public class PostagemUsuario extends AppCompatActivity {
 
     private ListView listView;
-    TextView  btnNovaPostagem1,btnPostagens1;
+    TextView  btnSair,btnPostagens1;
     ImageButton ibInicio, ibConfigurar;
 
     @Override
@@ -30,7 +30,7 @@ public class PostagemUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_postagem_usuario);
 
         //BUTÕES
-        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
+        btnSair = (TextView) findViewById(R.id.btnSair);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
         ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
         ibInicio = (ImageButton)findViewById(R.id.ibInicio);
@@ -61,9 +61,9 @@ public class PostagemUsuario extends AppCompatActivity {
             }
         });
         //Intente para criar uma nova postagem
-        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
+        btnSair.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(PostagemUsuario.this, NovoComunicadoUsuario.class);
+                Intent it = new Intent(PostagemUsuario.this, Login.class);
                 startActivity(it);
             }
         });

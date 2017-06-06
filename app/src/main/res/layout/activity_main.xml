@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
-
+    android:background="@drawable/login">
 
 
     <LinearLayout
@@ -35,10 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:ems="10"
+            android:gravity="center"
             android:hint="Ex:anderson"
             android:inputType="textPersonName"
-            android:maxLines="1"
-            android:gravity="center" />
+            android:maxLines="1" />
         <!-- Campo da Senha do Usuario -->
         <EditText
             android:id="@+id/SenhaLogin"
@@ -46,20 +45,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
+            android:gravity="center"
             android:hint="Ex:123456"
             android:inputType="numberPassword"
-            android:maxLines="1"
-            android:gravity="center" />
+            android:maxLines="1" />
         <!-- Botão Logar -->
         <Button
             android:id="@+id/btnLogar"
             android:layout_width="149dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@android:color/black"
-            android:text="Logar"
             android:layout_gravity="center"
-            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/screen_border"
+            android:text="Logar"
+            android:textColor="@android:color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
         <!-- Campo PARA CRIAR UM NOVO USUARIO -->

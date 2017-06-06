@@ -23,7 +23,7 @@ import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 public class Configurar extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView5;
-    TextView btnNovaPostagem1,btnPostagens1;
+    TextView btnSair,btnPostagens1;
     ImageButton ibConfigurar, ibInicio;
 
     @Override
@@ -33,7 +33,7 @@ public class Configurar extends AppCompatActivity implements AdapterView.OnItemC
 
         //BUTÕES
         ibInicio = (ImageButton)findViewById(R.id.ibInicio);
-        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
+        btnSair = (TextView) findViewById(R.id.btnSair);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
         ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
 
@@ -63,10 +63,10 @@ public class Configurar extends AppCompatActivity implements AdapterView.OnItemC
                 startActivity(it);
             }
         });
-        //Intente para criar uma nova postagem
-        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
+        //Intente para sair
+        btnSair.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(Configurar.this, NovoComunicadoUsuario.class);
+                Intent it = new Intent(Configurar.this, Login.class);
                 startActivity(it);
             }
         });

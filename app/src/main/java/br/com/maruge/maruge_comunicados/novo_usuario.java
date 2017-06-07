@@ -39,6 +39,7 @@ public class novo_usuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(novo_usuario.this,Login.class);
+                startActivity(it);
             }
         });
 

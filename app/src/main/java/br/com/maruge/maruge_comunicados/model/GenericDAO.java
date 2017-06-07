@@ -13,7 +13,7 @@ import java.util.List;
 public abstract class GenericDAO<T> extends SQLiteOpenHelper {
     private static final String NOME_BANCO = "maruge10";
     private static final int VERSAO_BANCO = 1;
-    private String sqlCreateCliente = "CREATE TABLE IF NOT EXISTS usuario(" +
+    private String sqlCreateUsuario = "CREATE TABLE IF NOT EXISTS usuario(" +
             "idusuario INTEGER ," +
             "nome VARCHAR(30) NOT NULL," +
             "senha VARCHAR(20) NOT NULL," +
@@ -32,7 +32,7 @@ public abstract class GenericDAO<T> extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(sqlCreateCliente);
+        db.execSQL(sqlCreateUsuario);
         db.execSQL(sqlCreateMessagem);
     }
 

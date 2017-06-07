@@ -48,6 +48,7 @@ public class nova_postagem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(nova_postagem.this, menu_adm.class);
+                startActivity(it);
             }
         });
 

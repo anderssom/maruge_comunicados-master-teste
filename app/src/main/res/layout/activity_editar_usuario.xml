@@ -28,7 +28,7 @@
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Iditar Usuario"
+                android:text="Editar Usuario"
                 android:textAlignment="center"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="18sp"

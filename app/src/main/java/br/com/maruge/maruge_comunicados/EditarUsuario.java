@@ -1,4 +1,4 @@
-package br.com.maruge.maruge_comunicados.Usuario;
+package br.com.maruge.maruge_comunicados;
 
 import android.app.Service;
 import android.content.Context;
@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import br.com.maruge.maruge_comunicados.Login;
-import br.com.maruge.maruge_comunicados.R;
 import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
@@ -48,6 +46,7 @@ public class EditarUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(EditarUsuario.this, Login.class);
+                startActivity(it);
             }
         });
 

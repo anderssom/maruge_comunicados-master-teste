@@ -44,6 +44,7 @@ public class ListaUsuario extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(ListaUsuario.this,menu_adm.class);
+                startActivity(it);
             }
         });
 

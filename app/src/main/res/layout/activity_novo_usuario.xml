@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
+    android:background="@drawable/novousuario">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,16 +11,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
-            android:layout_width="351dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:background="@color/colorPrimaryDark"
             android:orientation="horizontal">
+
 
             <ImageButton
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/a" />
+                android:background="@drawable/icon" />
 
             <!-- Botão NOVA POSTAGEM -->
             <!-- Botão de Postagens -->
@@ -28,40 +29,49 @@
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft = "90px"
                 android:text="Faça seu Cadastro"
                 android:textAlignment="center"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@android:drawable/ic_menu_preferences"
-                android:backgroundTint="@android:color/darker_gray" />
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/icone"
+                android:layout_marginLeft = "40px" />
         </LinearLayout>
 
 
         <EditText
             android:id="@+id/edtNome"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft = "30px"
             android:gravity="center"
-            android:layout_marginTop="30dp"
-            android:hint="Ex:anderson"
-            android:inputType="textPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:hint="Novo usuário"
+            android:inputType="textAutoComplete"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="#364e6a"
+            />
 
         <EditText
             android:id="@+id/edtSenha"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft = "30px"
             android:gravity="center"
-            android:layout_marginTop="15dp"
-            android:hint="Ex:123456"
-            android:inputType="numberPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="#364e6a"
+            />
 
 
         <Button
@@ -69,10 +79,10 @@
             android:layout_width="137dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@android:color/black"
+            android:background="@drawable/screen_border"
             android:text="Salvar"
-            android:layout_marginTop="20dp"
-            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="50dp"
+            android:textColor="#364e6a"
             android:textSize="18sp"
             android:textStyle="bold" />
 

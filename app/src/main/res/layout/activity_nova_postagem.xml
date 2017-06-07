@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
+
+    android:background="@drawable/cadastro">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -14,24 +15,24 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:background="@color/colorPrimaryDark"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/a" />
+                android:background="@drawable/icon" />
 
             <!-- Botão NOVA POSTAGEM -->
             <TextView
                 android:id="@+id/btnNovaPostagem1"
-                android:layout_width="120dp"
+                android:layout_width="97dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Comunicado"
                 android:textAlignment="center"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
             <!-- Botão de Postagens -->
@@ -40,18 +41,20 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft = "40px"
                 android:text="Postagens"
                 android:textAlignment="center"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@android:drawable/ic_menu_preferences"
-                android:backgroundTint="@android:color/darker_gray" />
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/icone"
+                android:layout_marginLeft = "60px"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -62,24 +65,30 @@
 
             <EditText
                 android:id="@+id/EdtTitulo"
-                android:layout_width="match_parent"
+                android:layout_width="337dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:hint="Ex:Titulo"
-                android:inputType="text"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft = "24px"
+                android:ems="10"
                 android:maxLines="1"
-
+                android:hint="Titulo"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="#364e6a"
                 />
 
             <EditText
                 android:id="@+id/editMessagem"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:hint="Ex:Messagem"
-                android:inputType="textMultiLine" />
+                android:layout_width="337dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft = "24px"
+                android:ems="10"
+                android:maxLines="1"
+                android:hint="Mensagem"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="#364e6a"
+                />
 
             <Button
                 android:id="@+id/btnSalvarMessagem"
@@ -89,7 +98,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/screen_border"
                 android:text="Salvar"
-                android:textColor="@android:color/black"
+                android:textColor="#364e6a"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

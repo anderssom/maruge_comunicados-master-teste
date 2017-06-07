@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#acd8e1"
     >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
@@ -10,16 +11,16 @@
         android:weightSum="1">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:background="@color/colorPrimaryDark"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/a" />
+                android:background="@drawable/icon" />
 
             <!-- Botão NOVA POSTAGEM -->
             <TextView
@@ -29,7 +30,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Comunicado"
                 android:textAlignment="center"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
             <!-- Botão de Postagens -->
@@ -40,16 +41,17 @@
                 android:layout_marginTop="20dp"
                 android:text="Postagens"
                 android:textAlignment="center"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@android:drawable/ic_menu_preferences"
-                android:backgroundTint="@android:color/darker_gray" />
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/icone"
+                android:layout_marginLeft = "60px"
+                />
         </LinearLayout>
 
         <ListView

@@ -1,4 +1,4 @@
-package br.com.maruge.maruge_comunicados.Administrador;
+package br.com.maruge.maruge_comunicados;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import br.com.maruge.maruge_comunicados.R;
 import br.com.maruge.maruge_comunicados.model.Messagem;
 import br.com.maruge.maruge_comunicados.model.MessagemDAO;
 

@@ -1,4 +1,4 @@
-package br.com.maruge.maruge_comunicados.Usuario;
+package br.com.maruge.maruge_comunicados;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +12,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.maruge.maruge_comunicados.Login;
-import br.com.maruge.maruge_comunicados.R;
 import br.com.maruge.maruge_comunicados.model.Messagem;
 import br.com.maruge.maruge_comunicados.model.MessagemDAO;
 

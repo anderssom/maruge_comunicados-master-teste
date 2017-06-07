@@ -1,4 +1,4 @@
-package br.com.maruge.maruge_comunicados.Administrador;
+package br.com.maruge.maruge_comunicados;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import br.com.maruge.maruge_comunicados.R;
 
 public class menu_adm extends AppCompatActivity  {
 

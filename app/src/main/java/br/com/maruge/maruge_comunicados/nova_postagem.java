@@ -27,7 +27,7 @@ public class nova_postagem extends AppCompatActivity {
     //Chamar tela ok
     public static void chamaTela(Context context, Messagem messagem){
         nova_postagem.messagem = messagem;
-        Intent intent = new Intent(context, Login.class);
+        Intent intent = new Intent(context, nova_postagem.class);
         context.startActivity(intent);
     }
     @Override

@@ -25,7 +25,8 @@
         <activity android:name=".PostagemUsuario" />
         <activity android:name=".ListaUsuario" />
         <activity android:name=".Configurar" />
-        <activity android:name=".NovoComunicadoUsuario"></activity>
+        <activity android:name=".NovoComunicadoUsuario" />
+        <activity android:name=".EditarUsuario"></activity>
     </application>
 
 </manifest>

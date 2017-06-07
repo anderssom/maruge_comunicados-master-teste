@@ -34,7 +34,7 @@ public class MessagemDAO extends GenericDAO<Messagem> {
     @Override
     public List<Messagem> listar() {
         List<Messagem> messagems = new ArrayList<Messagem>();
-        Cursor cursor = database.rawQuery("SELECT * FROM messagens", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM messagens ORDER BY idmessagem DESC", null);
         cursor.moveToFirst();
         int indiceColunaId = cursor.getColumnIndex("idmessagem");
         int indiceColunaTitulo = cursor.getColumnIndex("titulo");

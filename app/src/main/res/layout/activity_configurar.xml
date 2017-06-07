@@ -54,9 +54,10 @@
                 android:background="@android:drawable/ic_menu_preferences"
                 android:backgroundTint="@android:color/darker_gray" />
         </LinearLayout>
+        <ListView
+            android:id="@+id/listView5"
+            android:layout_width="match_parent"
+            android:layout_height="317dp"></ListView>
     </LinearLayout>
-    <ListView
-        android:id="@+id/listView5"
-        android:layout_width="match_parent"
-        android:layout_height="317dp"></ListView>
+
 </ScrollView>

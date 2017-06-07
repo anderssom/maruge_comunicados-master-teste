@@ -89,14 +89,14 @@ public class Configurar extends AppCompatActivity implements AdapterView.OnItemC
 
         builder.setTitle("Opção");
         builder.setMessage("Escolha uma opção:");
-        /*
+
         builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                novo_usuario.chamaTela(ListaUsuario.this, usuario);
+                EditarUsuario.chamaTela(Configurar.this, usuario);
             }
         });
-        */
+
         builder.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

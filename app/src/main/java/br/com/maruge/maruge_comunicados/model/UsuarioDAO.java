@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.maruge.maruge_comunicados.util.Ativo;
+
 /**
  * Created by Jefferson David on 08/05/2017.
  */
@@ -72,6 +74,11 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
         Cursor cursor = database.rawQuery("SELECT * FROM usuario WHERE nome=? and senha=?", new String[]{nome, senha});
         if (cursor != null) {
             if (cursor.getCount() > 0) {
+                Usuario usuario = new Usuario();
+                usuario.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+                usuario.setSenha(cursor.getString(cursor.getColumnIndex("senha")));
+
+                Ativo.setUsuario(usuario);
                 return true;
             }
         }

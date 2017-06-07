@@ -49,6 +49,7 @@ public class postagens extends AppCompatActivity implements AdapterView.OnItemCl
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(postagens.this,menu_adm.class);
+                startActivity(it);
             }
         });
 

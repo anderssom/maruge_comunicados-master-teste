@@ -41,6 +41,7 @@ public class menu_adm extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(menu_adm.this,menu_adm.class);
+                startActivity(it);
             }
         });
 

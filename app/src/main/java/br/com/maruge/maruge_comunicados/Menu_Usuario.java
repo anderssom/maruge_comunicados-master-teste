@@ -36,6 +36,7 @@ public class Menu_Usuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(Menu_Usuario.this,Menu_Usuario.class);
+                startActivity(it);
             }
         });
 

@@ -1,39 +1,40 @@
-package br.com.maruge.maruge_comunicados;
+package br.com.maruge.maruge_comunicados.Administrador;
+
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.maruge.maruge_comunicados.R;
 import br.com.maruge.maruge_comunicados.model.Messagem;
 import br.com.maruge.maruge_comunicados.model.MessagemDAO;
-import br.com.maruge.maruge_comunicados.model.Usuario;
-import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
-public class ListaUsuario extends AppCompatActivity implements AdapterView.OnItemClickListener{
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class postagens extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     TextView btnPostagens1,btnNovaPostagem1;
     ImageButton ibInicio,ibConfigurar;
 
-    private ListView listView4;
+    private ListView listView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_usuario);
+        setContentView(R.layout.activity_postagens);
 
         //BUTÕES
         ibInicio = (ImageButton)findViewById(R.id.ibInicio);
@@ -46,7 +47,7 @@ public class ListaUsuario extends AppCompatActivity implements AdapterView.OnIte
         ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ListaUsuario.this,menu_adm.class);
+                Intent it = new Intent(postagens.this,menu_adm.class);
             }
         });
 
@@ -54,7 +55,7 @@ public class ListaUsuario extends AppCompatActivity implements AdapterView.OnIte
         ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(ListaUsuario.this,ListaUsuario.class);
+                Intent it = new Intent(postagens.this,ListaUsuario.class);
                 startActivity(it);
             }
         });
@@ -62,52 +63,47 @@ public class ListaUsuario extends AppCompatActivity implements AdapterView.OnIte
         // Intente para ir para pagina de listagem das postagens
         btnPostagens1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(ListaUsuario.this, postagens.class);
+                Intent it = new Intent(postagens.this, postagens.class);
                 startActivity(it);
             }
         });
         //Intente para criar uma nova postagem
         btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(ListaUsuario.this, nova_postagem.class);
+                Intent it = new Intent(postagens.this, nova_postagem.class);
                 startActivity(it);
             }
         });
 
-
-
-        listView4 = (ListView) findViewById(R.id.listView4);
+        listView = (ListView) findViewById(R.id.listView);
 
         atualizaListaClientes();
 
-        listView4.setOnItemClickListener(this);
+        listView.setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, final long id) {
 
-        final Usuario usuario = (Usuario) parent.getAdapter().getItem(position);
-        final UsuarioDAO dao = new UsuarioDAO(this);
+        final Messagem messagem = (Messagem) parent.getAdapter().getItem(position);
+        final MessagemDAO dao = new MessagemDAO(this);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
         builder.setTitle("Opção");
         builder.setMessage("Escolha uma opção:");
-        /*
         builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                novo_usuario.chamaTela(ListaUsuario.this, usuario);
+                nova_postagem.chamaTela(postagens.this, messagem);
             }
         });
-        */
         builder.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dao.deletar(usuario.getId());
+                dao.deletar(messagem.getId());
                 atualizaListaClientes();
-                Toast.makeText(ListaUsuario.this,
-                        "Nome "+usuario.getNome()+", excluído!",
+                Toast.makeText(postagens.this,
+                        "Titulo "+messagem.getTitulo()+", excluído!",
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -117,21 +113,62 @@ public class ListaUsuario extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void atualizaListaClientes(){
-        UsuarioDAO usuarioDAO = new UsuarioDAO(this);
+        MessagemDAO messagemDAO = new MessagemDAO(this);
 
-        List<Usuario> usuarios = new ArrayList<>();
-        if(usuarioDAO.listar()!=null){
-            if(usuarioDAO.listar().size()>0){
-                usuarios = usuarioDAO.listar();
+        List<Messagem> messagems = new ArrayList<>();
+        if(messagemDAO.listar()!=null){
+            if(messagemDAO.listar().size()>0){
+                messagems = messagemDAO.listar();
             }
         }
 
-        ArrayAdapter<Usuario> adapter =
-                new ArrayAdapter<Usuario>(this, android.R.layout.simple_list_item_1,
-                        usuarios);
-        listView4.setAdapter(adapter);
+        ArrayAdapter<Messagem> adapter =
+                new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,
+                        messagems);
+        listView.setAdapter(adapter);
     }
 
 
 }
+
+    /*@Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_postagens);
+
+        ListView listView = (ListView) findViewById(R.id.listView);
+
+        MessagemDAO messagemDAO = new MessagemDAO(this);
+        List<Messagem> messagems = new ArrayList<>();
+        if (messagemDAO.listar()!=null){
+            if (messagemDAO.listar().size()>0){
+                messagems = messagemDAO.listar();
+            }
+        }
+        ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,messagems);
+        listView.setAdapter(adapter);
+    }
+
+/*
+   // Listando Usuarios
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_postagens);
+
+        ListView listView = (ListView) findViewById(R.id.listView);
+        UsuarioDAO usuarioDAO = new UsuarioDAO(this);
+      List<Usuario> usuarios = new ArrayList<>();
+        if (usuarioDAO.listar()!=null){
+            if (usuarioDAO.listar().size()>0){
+                usuarios = usuarioDAO.listar();
+            }
+        }
+        ArrayAdapter<Usuario> adapter =
+                new ArrayAdapter<Usuario>(this, android.R.layout.simple_list_item_1,
+                        usuarios);
+        listView.setAdapter(adapter);
+    }
+
+*/
 

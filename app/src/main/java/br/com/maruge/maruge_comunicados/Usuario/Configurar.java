@@ -1,4 +1,4 @@
-package br.com.maruge.maruge_comunicados;
+package br.com.maruge.maruge_comunicados.Usuario;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import br.com.maruge.maruge_comunicados.Login;
+import br.com.maruge.maruge_comunicados.R;
 import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 

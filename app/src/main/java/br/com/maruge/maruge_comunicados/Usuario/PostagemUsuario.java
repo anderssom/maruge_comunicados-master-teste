@@ -1,12 +1,10 @@
-package br.com.maruge.maruge_comunicados;
+package br.com.maruge.maruge_comunicados.Usuario;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.maruge.maruge_comunicados.Login;
 import br.com.maruge.maruge_comunicados.R;
 import br.com.maruge.maruge_comunicados.model.Messagem;
 import br.com.maruge.maruge_comunicados.model.MessagemDAO;

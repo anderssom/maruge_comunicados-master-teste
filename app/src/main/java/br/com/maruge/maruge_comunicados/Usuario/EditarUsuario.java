@@ -1,4 +1,4 @@
-package br.com.maruge.maruge_comunicados;
+package br.com.maruge.maruge_comunicados.Usuario;
 
 import android.app.Service;
 import android.content.Context;
@@ -12,7 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import br.com.maruge.maruge_comunicados.model.Messagem;
+import br.com.maruge.maruge_comunicados.Login;
+import br.com.maruge.maruge_comunicados.R;
 import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 

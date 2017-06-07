@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import br.com.maruge.maruge_comunicados.Administrador.menu_adm;
+import br.com.maruge.maruge_comunicados.Usuario.Menu_Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
 
 public class Login extends AppCompatActivity  {
@@ -66,7 +68,7 @@ public class Login extends AppCompatActivity  {
                     Intent it = new Intent(Login.this, Menu_Usuario.class);
                     startActivity(it);
 
-                    Toast.makeText(Login.this, "Bem vindo !!!"+usuario, Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Bem vindo "+usuario, Toast.LENGTH_LONG).show();
 
                 }else if ("admin".equals(usuario) && "123456".equals(senha)) {
                     Intent it = new Intent(Login.this, menu_adm.class);

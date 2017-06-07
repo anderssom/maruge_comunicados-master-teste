@@ -1,5 +1,4 @@
-package br.com.maruge.maruge_comunicados;
-
+package br.com.maruge.maruge_comunicados.Administrador;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,25 +7,24 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import br.com.maruge.maruge_comunicados.R;
 
+public class menu_adm extends AppCompatActivity  {
 
-
-public class Menu_Usuario extends AppCompatActivity {
-    TextView btnPostagens1,btnSair;
+    TextView btnPostagens1,btnNovaPostagem1;
     ImageButton ibInicio,ibConfigurar;
-
-   // private ListView listView;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu__usuario);
+        setContentView(R.layout.activity_menu_adm);
+
+
 
         //BUTÕES
         ibInicio = (ImageButton)findViewById(R.id.ibInicio);
-        btnSair = (TextView) findViewById(R.id.btnSair);
+        btnNovaPostagem1 = (TextView) findViewById(R.id.btnNovaPostagem1);
         btnPostagens1 = (TextView) findViewById(R.id.btnPostagens1);
         ibConfigurar = (ImageButton) findViewById(R.id.ibConfigurar);
 
@@ -35,7 +33,7 @@ public class Menu_Usuario extends AppCompatActivity {
         ibInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Menu_Usuario.this,Menu_Usuario.class);
+                Intent it = new Intent(menu_adm.this,menu_adm.class);
             }
         });
 
@@ -43,7 +41,7 @@ public class Menu_Usuario extends AppCompatActivity {
         ibConfigurar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Menu_Usuario.this,Configurar.class);
+                Intent it = new Intent(menu_adm.this,ListaUsuario.class);
                 startActivity(it);
             }
         });
@@ -51,32 +49,18 @@ public class Menu_Usuario extends AppCompatActivity {
         // Intente para ir para pagina de listagem das postagens
         btnPostagens1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(Menu_Usuario.this, PostagemUsuario.class);
+                Intent it = new Intent(menu_adm.this, postagens.class);
                 startActivity(it);
             }
         });
         //Intente para criar uma nova postagem
-        btnSair.setOnClickListener(new View.OnClickListener() {
+        btnNovaPostagem1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(Menu_Usuario.this, Login.class);
+                Intent it = new Intent(menu_adm.this, nova_postagem.class);
                 startActivity(it);
             }
         });
 
-      /* ListView listView = (ListView) findViewById(R.id.listView4);
-
-        MessagemDAO messagemDAO = new MessagemDAO(this);
-        List<Messagem> messagems = new ArrayList<>();
-        if (messagemDAO.listar()!=null){
-            if (messagemDAO.listar().size()>0){
-                messagems = messagemDAO.listar();
-            }
-        }
-        ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,messagems);
-        listView.setAdapter(adapter);
-        */
 
     }
 }
-
-

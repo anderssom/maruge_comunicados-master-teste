@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#acd8e1"
@@ -8,7 +9,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1">
+        android:weightSum="1"
+        tools:ignore="ScrollViewSize">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -20,7 +22,8 @@
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/icon" />
+                android:background="@drawable/icon"
+                tools:ignore="ContentDescription" />
 
             <!-- Botão de Postagens -->
             <TextView
@@ -28,12 +31,12 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft = "40px"
                 android:text="Postagens"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
             <!-- Botão sair -->
             <TextView
@@ -46,20 +49,23 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
                 android:layout_width="48dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/icone"
-                android:layout_marginLeft = "8px" />
+                android:layout_marginLeft = "40px"
+                tools:ignore="ContentDescription,PxUsage,RtlHardcoded" />
         </LinearLayout>
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="309dp"
-            android:id="@+id/listView1">
+            android:id="@+id/listView1"
+            tools:ignore="NestedScrolling">
         </ListView>
     </LinearLayout>
 </ScrollView>

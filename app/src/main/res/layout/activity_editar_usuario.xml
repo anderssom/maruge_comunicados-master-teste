@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/editaruser">
@@ -9,7 +10,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="ScrollViewSize">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,7 +22,8 @@
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/icon" />
+                android:background="@drawable/icon"
+                tools:ignore="ContentDescription" />
 
             <!-- Botão NOVA POSTAGEM -->
             <!-- Botão de Postagens -->
@@ -33,15 +36,16 @@
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
                 android:layout_width="48dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/icone"
-                android:layout_marginLeft = "60px"
-                />
+                android:layout_marginLeft = "70px"
+                tools:ignore="ContentDescription,PxUsage,RtlHardcoded" />
         </LinearLayout>
 
 
@@ -53,7 +57,8 @@
             android:layout_marginTop="30dp"
             android:hint="Ex:anderson"
             android:inputType="textAutoComplete"
-            android:maxLines="1" />
+            android:maxLines="1"
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/edtSenha"
@@ -63,7 +68,8 @@
             android:layout_marginTop="15dp"
             android:hint="Ex:123456"
             android:inputType="textPassword"
-            android:maxLines="1" />
+            android:maxLines="1"
+            tools:ignore="HardcodedText" />
 
 
         <Button
@@ -76,7 +82,8 @@
             android:text="Salvar"
             android:textColor="#364e6a"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 </ScrollView>

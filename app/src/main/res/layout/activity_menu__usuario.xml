@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#acd8e1"
@@ -8,7 +9,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1">
+        android:weightSum="1"
+        tools:ignore="ScrollViewSize">
 
 
         <LinearLayout
@@ -21,7 +23,8 @@
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/icon" />
+                android:background="@drawable/icon"
+                tools:ignore="ContentDescription" />
 
             <!-- Botão de Postagens -->
             <TextView
@@ -34,7 +37,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
 
             <!-- Botão sair -->
             <TextView
@@ -47,14 +51,16 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
                 android:layout_width="48dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20px"
-                android:background="@drawable/icone" />
+                android:background="@drawable/icone"
+                tools:ignore="ContentDescription,PxUsage,RtlHardcoded" />
         </LinearLayout>
         <CalendarView
             android:id="@+id/calendarView"

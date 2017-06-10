@@ -38,5 +38,7 @@ public class Messagem {
         return "Titulo: " + titulo + "\nMenssagem:\n "+ msg;
 
     }
+
+
 }
 

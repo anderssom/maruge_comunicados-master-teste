@@ -1,58 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#acd8e1"
-    >
+    android:background="#acd8e1">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1">
-
+        android:weightSum="1"
+        tools:ignore="ScrollViewSize">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:orientation="horizontal">
+            android:background="#364e6a"
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/icon" />
+                android:layout_gravity="center"
+                android:layout_marginLeft="-2dp"
+                android:background="@drawable/icon"
+                tools:ignore="ContentDescription"/>
 
             <!-- Botão NOVA POSTAGEM -->
             <TextView
                 android:id="@+id/btnNovaPostagem1"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
                 android:text="Comunicado"
-                android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded"/>
             <!-- Botão de Postagens -->
             <TextView
                 android:id="@+id/btnPostagens1"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft = "40px"
+                android:layout_gravity="center"
                 android:text="Postagens"
-                android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
-                android:layout_width="48dp"
-                android:layout_height="match_parent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="-4px"
                 android:background="@drawable/icone"
-                android:layout_marginLeft = "60px"
+                tools:ignore="ContentDescription,PxUsage,RtlHardcoded"
                 />
         </LinearLayout>
         <CalendarView

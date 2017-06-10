@@ -122,8 +122,7 @@ public class postagens extends AppCompatActivity implements AdapterView.OnItemCl
             }
         }
 
-        ArrayAdapter<Messagem> adapter =
-                new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,
                         messagems);
         listView.setAdapter(adapter);
     }

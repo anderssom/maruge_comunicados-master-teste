@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/novousuario">
+    android:background="@mipmap/novousuario">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,66 +13,78 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:ignore="ScrollViewSize">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:orientation="horizontal"
-            tools:ignore="ExtraText">
 
-            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#364e6a"
+            android:orientation="vertical">
+
+
             <ImageButton
                 android:id="@+id/ibInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/icon"
+                android:layout_gravity="center"
+                android:background="@mipmap/icon"
                 tools:ignore="ContentDescription" />
 
             <!-- Botão NOVA POSTAGEM -->
             <!-- Botão de Postagens -->
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft = "90px"
+                android:layout_gravity="center"
+                android:layout_marginTop="1dp"
                 android:text="Faça seu Cadastro"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
+                tools:ignore="HardcodedText,PxUsage,RtlHardcoded"
+                />
 
             <ImageButton
                 android:id="@+id/ibConfigurar"
-                android:layout_width="48dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/icone"
-                android:layout_marginLeft = "40px"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/icone"
+
                 tools:ignore="ContentDescription,PxUsage,RtlHardcoded" />
         </LinearLayout>
 
 
         <EditText
             android:id="@+id/edtNome"
-            android:layout_width="350dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="-7dp"
             android:layout_marginLeft = "30px"
-            android:gravity="center"
-            android:maxLines="1"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="72dp"
             android:hint="Usuário"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="#364e6a"
+
             tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
 
         <EditText
             android:id="@+id/edtSenha"
-            android:layout_width="350dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="-9dp"
             android:layout_marginLeft = "30px"
-            android:gravity="center"
-            android:maxLines="1"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="72dp"
             android:hint="Senha"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimaryDark"

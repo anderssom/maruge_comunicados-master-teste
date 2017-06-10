@@ -3,6 +3,7 @@ package br.com.maruge.maruge_comunicados;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -75,9 +76,10 @@ public class PostagemUsuario extends AppCompatActivity {
                     messagems = messagemDAO.listar();
                 }
             }
-            ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,
-                    messagems);
-            listView.setAdapter(adapter);
+
+        ArrayAdapter<Messagem> adapter = new ArrayAdapter<Messagem>(this, android.R.layout.simple_list_item_1,
+                messagems);
+        listView.setAdapter(adapter);
     }
 
 

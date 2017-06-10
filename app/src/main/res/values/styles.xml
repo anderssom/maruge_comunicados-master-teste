@@ -1,13 +1,13 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="MarugeChat" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customizao layout -->
         <item name="windowNoTitle">true</item>
         <!-- Remove o titulo no layout -->
         <item name="windowActionBar">false</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">#0076A3</item>
     </style>
 
 </resources>

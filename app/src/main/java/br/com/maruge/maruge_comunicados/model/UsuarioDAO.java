@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.maruge.maruge_comunicados.util.Ativo;
 
 
 /**
@@ -36,10 +37,11 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
         List<Usuario> usuarios = new ArrayList<Usuario>();
         Cursor cursor = database.rawQuery("SELECT * FROM usuario", null);
 
-        int indiceColunaId = cursor.getColumnIndex("idusuario");
-        int indiceColunaNome = cursor.getColumnIndex("nome");
-        int indiceColunaSenha = cursor.getColumnIndex("senha");
+
         if (cursor.moveToFirst()) {
+            int indiceColunaId = cursor.getColumnIndex("idusuario");
+            int indiceColunaNome = cursor.getColumnIndex("nome");
+            int indiceColunaSenha = cursor.getColumnIndex("senha");
             do {
                 Usuario usuario = new Usuario();
                 usuario.setId(cursor.getInt(indiceColunaId));
@@ -73,12 +75,17 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
     public boolean autenticar (String nome, String senha) {
         Cursor cursor = database.rawQuery("SELECT * FROM usuario WHERE nome=? and senha=?", new String[]{nome, senha});
         if (cursor != null) {
+            int indiceColunaId = cursor.getColumnIndex("idusuario");
+            int indiceColunaNome = cursor.getColumnIndex("nome");
+            int indiceColunaSenha = cursor.getColumnIndex("senha");
+            cursor.moveToFirst();
             if (cursor.getCount() > 0) {
-               // Usuario usuario = new Usuario();
-              //  usuario.setNome(cursor.getString(cursor.getColumnIndex("nome")));
-              //  usuario.setSenha(cursor.getString(cursor.getColumnIndex("senha")));
+                Usuario usuario = new Usuario();
+                usuario.setId(cursor.getInt(indiceColunaId));
+               usuario.setNome(cursor.getString(indiceColunaNome));
+                usuario.setSenha(cursor.getString(indiceColunaSenha));
 
-               // Ativo.setUsuario(usuario);
+               Ativo.setUsuario(usuario);
                 return true;
             }
         }

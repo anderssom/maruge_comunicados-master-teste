@@ -17,14 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login" />
-        <activity android:name=".postagens" />
-        <activity android:name=".nova_postagem" />
+        <activity android:name=".administrador.postagens" />
+        <activity android:name=".administrador.nova_postagem" />
         <activity android:name=".novo_usuario" />
-        <activity android:name=".menu_adm" />
-        <activity android:name=".Menu_Usuario" />
-        <activity android:name=".PostagemUsuario" />
-        <activity android:name=".ListaUsuario" />
-        <activity android:name=".Configurar" />
+        <activity android:name=".administrador.menu_adm" />
+        <activity android:name=".usuario.Menu_Usuario" />
+        <activity android:name=".usuario.PostagemUsuario" />
+        <activity android:name=".administrador.ListaUsuario" />
+        <activity android:name=".usuario.Configurar" />
         <activity android:name=".EditarUsuario"></activity>
     </application>
 

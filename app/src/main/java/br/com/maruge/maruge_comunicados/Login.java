@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import br.com.maruge.maruge_comunicados.administrador.menu_adm;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
+import br.com.maruge.maruge_comunicados.usuario.Menu_Usuario;
 
 public class Login extends AppCompatActivity  {
     Button btnLogar;

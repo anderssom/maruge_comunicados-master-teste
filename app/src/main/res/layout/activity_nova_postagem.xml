@@ -82,6 +82,7 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginStart="72dp"
                 android:hint="Titulo"
+                android:maxLines= "1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="#a34cb8e6"
                 tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />

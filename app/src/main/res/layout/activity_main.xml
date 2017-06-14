@@ -40,6 +40,8 @@
             android:layout_margin="10dp"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="#fff"
+            android:maxLines="1"
+            android:inputType="textPersonName"
             tools:ignore="HardcodedText,PxUsage,RtlHardcoded" />
         <!-- Campo da Senha do Usuario -->
 
@@ -58,7 +60,8 @@
             android:ems="10"
             android:fontFamily="sans-serif-medium"
             android:hint="Senha"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
+            android:maxLines="1"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="#fff"
 

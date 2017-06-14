@@ -127,16 +127,7 @@ public class nova_postagem extends AppCompatActivity {
 
             }
         });
-        /*Lista todas as postagem existentes
-        btnListar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(nova_postagem.this, postagens.class);
-                startActivity(intent);
 
-            }
-        });
-        */
     }
 
 }

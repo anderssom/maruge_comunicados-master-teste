@@ -111,6 +111,8 @@ public class nova_postagem extends AppCompatActivity {
 
                 if (messagem.getId()== 0) {
                     db.salvar(messagem);
+                    Toast.makeText(nova_postagem.this, "Comunicado Salvo com sucesso!",
+                            Toast.LENGTH_SHORT).show();
 
                 }else{
                     db.atualizar(messagem);
@@ -120,8 +122,7 @@ public class nova_postagem extends AppCompatActivity {
 
                 titulo.setText("");
                 msg.setText("");
-                Toast.makeText(nova_postagem.this, "Comunicado Salvo com sucesso!",
-                        Toast.LENGTH_SHORT).show();
+
 
             }
         });

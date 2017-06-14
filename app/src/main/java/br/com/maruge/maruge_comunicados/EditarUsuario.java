@@ -71,7 +71,7 @@ public class EditarUsuario extends AppCompatActivity {
                 startActivity(ven);
 
 
-                UsuarioDAO usuarioDAO = new UsuarioDAO(EditarUsuario.this);
+                UsuarioDAO db = new UsuarioDAO(EditarUsuario.this);
                 if (usuario==null) {
                     usuario = new Usuario();
                 }
@@ -79,18 +79,18 @@ public class EditarUsuario extends AppCompatActivity {
                 usuario.setSenha(tvSenha.getText().toString());
 
                 if (usuario.getId()==0){
-                    usuarioDAO.salvar(usuario);
+                    db.salvar(usuario);
+                    //mensagem na tela
+                    Toast.makeText(EditarUsuario.this, "Usuário Salvo com Sucesso!",
+                            Toast.LENGTH_SHORT).show();
                 }else {
                     //atualiza usuario
-                    usuarioDAO.atualizar(usuario);
+                    db.atualizar(usuario);
                     Toast.makeText(EditarUsuario.this, "Usuario Atualizado com sucesso!",
                             Toast.LENGTH_SHORT).show();
 
                 }
 
-                //mensagem na tela
-                Toast.makeText(EditarUsuario.this, "Usuário Salvo com Sucesso!",
-                        Toast.LENGTH_SHORT).show();
                 //Limpa campos
                 tvNome.setText("");
                 tvSenha.setText("");

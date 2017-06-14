@@ -17,13 +17,13 @@ public abstract class GenericDAO<T> extends SQLiteOpenHelper {
             "idusuario INTEGER ," +
             "nome VARCHAR(30) NOT NULL," +
             "senha VARCHAR(20) NOT NULL," +
-            "PRIMARY KEY(idusuario)" +
+            "PRIMARY KEY  (idusuario)" +
             ");";
     private String sqlCreateMessagem = "CREATE TABLE IF NOT EXISTS messagens(" +
             "idmessagem INTEGER ," +
             "titulo VARCHAR(20) NOT NULL," +
             "msg VARCHAR(200) NOT NULL," +
-            "PRIMARY KEY(idmessagem)" +
+            "PRIMARY KEY AUTOINCREMENT (idmessagem)" +
             ");";
 
     public GenericDAO(Context context) {

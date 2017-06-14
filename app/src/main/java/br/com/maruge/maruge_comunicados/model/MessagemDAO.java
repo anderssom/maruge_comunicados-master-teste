@@ -61,8 +61,8 @@ public class MessagemDAO extends GenericDAO<Messagem> {
     public boolean atualizar(Messagem messagem){
         database.execSQL("UPDATE messagens SET titulo=?, msg=?" +
                         " WHERE idmessagem=?",
-                new Object[]{messagem.getId(), messagem.getTitulo(),
-                        messagem.getMsg()});
+                new Object[]{ messagem.getTitulo(),
+                        messagem.getMsg(),messagem.getId()});
         return false;
     }
 }

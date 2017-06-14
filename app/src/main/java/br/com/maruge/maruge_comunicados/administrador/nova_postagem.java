@@ -78,11 +78,13 @@ public class nova_postagem extends AppCompatActivity {
 
         final EditText titulo = (EditText) findViewById(R.id.EdtTitulo);
         final EditText msg = (EditText)findViewById(R.id.editMessagem);
-        //Button btnListar = (Button) findViewById(R.id.btnListar);
         Button btnSalvarMessagem = (Button) findViewById(R.id.btnSalvarMessagem);
 
+        if(messagem!=null) {
+            titulo.setText(messagem.getTitulo());
+            msg.setText(messagem.getMsg());
 
-
+        }
 
 
         btnSalvarMessagem.setOnClickListener(new View.OnClickListener() {
@@ -92,27 +94,22 @@ public class nova_postagem extends AppCompatActivity {
                 Intent intent = new Intent(nova_postagem.this, postagens.class);
                 startActivity(intent);
 
-                messagem = new Messagem();
-                Messagem messagem = new Messagem();
-                messagem.setTitulo(titulo.getText().toString());
 
-                messagem.setMsg(msg.getText().toString());
 
                 MessagemDAO db = new MessagemDAO(nova_postagem.this);
 
-                if(messagem!=null){
-                    titulo.setError("Preencha os campo Titulo!!!");
-                    msg.setError("Preencha os campo Menssagem!!!");
-                    titulo.requestFocus();
-
-                }else if(messagem==null) {
+                 if(messagem==null) {
+                    messagem = new Messagem();
                     titulo.setError("Preencha os campo Titulo!!!");
                     msg.setError("Preencha os campo Menssagem!!!");
                     titulo.requestFocus();
                     msg.requestFocus();
                 }
+                messagem.setTitulo(titulo.getText().toString());
 
-                if (messagem.getId()==0) {
+                messagem.setMsg(msg.getText().toString());
+
+                if (messagem.getId()== 0) {
                     db.salvar(messagem);
 
                 }else{
@@ -120,10 +117,11 @@ public class nova_postagem extends AppCompatActivity {
                     Toast.makeText(nova_postagem.this, "Comunicado Atualizado com sucesso!",
                           Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(nova_postagem.this, "Comunicado Salvo com sucesso!",
-                        Toast.LENGTH_SHORT).show();
+
                 titulo.setText("");
                 msg.setText("");
+                Toast.makeText(nova_postagem.this, "Comunicado Salvo com sucesso!",
+                        Toast.LENGTH_SHORT).show();
 
             }
         });

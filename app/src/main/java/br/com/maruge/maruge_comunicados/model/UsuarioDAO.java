@@ -66,8 +66,8 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
     public boolean atualizar(Usuario usuario){
         database.execSQL("UPDATE usuario SET nome=?, senha=?" +
                         " WHERE idusuario=?",
-                new Object[]{usuario.getId(), usuario.getNome(),
-                        usuario.getSenha()});
+                new Object[]{ usuario.getNome(),
+                        usuario.getSenha(),usuario.getId()});
         return false;
     }
 

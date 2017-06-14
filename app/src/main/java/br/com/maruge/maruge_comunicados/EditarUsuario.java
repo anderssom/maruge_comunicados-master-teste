@@ -12,8 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import br.com.maruge.maruge_comunicados.administrador.nova_postagem;
 import br.com.maruge.maruge_comunicados.model.Usuario;
 import br.com.maruge.maruge_comunicados.model.UsuarioDAO;
+import br.com.maruge.maruge_comunicados.usuario.Configurar;
 
 public class EditarUsuario extends AppCompatActivity {
 
@@ -55,26 +57,41 @@ public class EditarUsuario extends AppCompatActivity {
 
         imm = (InputMethodManager) this.getSystemService(Service.INPUT_METHOD_SERVICE);
 
-
         Button btnSalvar = (Button) findViewById(R.id.btnSalvar);
+
+        if(usuario!=null){
+            tvNome.setText(usuario.getNome());
+            tvSenha.setText(usuario.getSenha());
+        }
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent ven = new Intent(getBaseContext(), Configurar.class);
+                startActivity(ven);
+
 
                 UsuarioDAO usuarioDAO = new UsuarioDAO(EditarUsuario.this);
-                Usuario usuario = new Usuario();
+                if (usuario==null) {
+                    usuario = new Usuario();
+                }
                 usuario.setNome(tvNome.getText().toString());
                 usuario.setSenha(tvSenha.getText().toString());
 
-                Intent ven = new Intent(getBaseContext(), Login.class);
-                startActivity(ven);
+                if (usuario.getId()==0){
+                    usuarioDAO.salvar(usuario);
+                }else {
+                    //atualiza usuario
+                    usuarioDAO.atualizar(usuario);
+                    Toast.makeText(EditarUsuario.this, "Usuario Atualizado com sucesso!",
+                            Toast.LENGTH_SHORT).show();
 
-                usuarioDAO.salvar(usuario);
+                }
+
+                //mensagem na tela
                 Toast.makeText(EditarUsuario.this, "Usuário Salvo com Sucesso!",
                         Toast.LENGTH_SHORT).show();
-                // limpaCampos();
-                // escondeTeclado();
+                //Limpa campos
                 tvNome.setText("");
                 tvSenha.setText("");
             }
